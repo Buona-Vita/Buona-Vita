@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buona Vita Grow Shop</title>
+  <link rel="icon" href="ChatOn image.jpg.jpeg" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-image: url(portada-grow.jpg.png);
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: rgba(27, 94, 32, 0.9);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      text-shadow: 2px 2px 4px black;
+      position: relative;
+    }
+
+    .frase-derecha {
+      position: absolute;
+      top: 30%;
+      right: 5%;
+      max-width: 300px;
+      font-size: 1rem;
+      color: #ffffff;
+      text-align: right;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    @media (max-width: 600px) {
+      .frase-derecha {
+        position: static;
+        text-align: center;
+        margin-top: 1rem;
+        max-width: 100%;
+        font-size: 1.1rem;
+      }
+    }
+
+    section {
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      margin: 1rem;
+      border-radius: 10px;
+      color: #fff;
+      backdrop-filter: blur(6px);
+    }
+
+    h2 { color: #ffffff; }
+
+    .catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .producto {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .producto img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+    }
+
+    input, textarea {
+      padding: 0.7rem;
+      border: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.6);
+      color: #000;
+    }
+
+    button {
+      background-color: #1b5e20;
+      color: white;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: rgba(27, 94, 32, 0.95);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .planta-doctora {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      z-index: 99;
+      animation: desplazarse 8s linear infinite alternate;
+    }
+
+    @keyframes desplazarse {
+      0% { left: 0; transform: scaleX(1); }
+      49% { transform: scaleX(1); }
+      50% { transform: scaleX(-1); }
+      100% { left: calc(100% - 80px); transform: scaleX(-1); }
+    }
+
+    .carrito {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Buona Vita Grow Shop</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="planta-doctora">
+    <img src="planta-doctora.gif.png" alt="Planta doctora" width="90" height="90">
+  </div>
+
+  <section class="hero" id="inicio">
+    <div class="frase-derecha">
+      Tu lugar de confianza para todo lo relacionado con el cultivo y el bienestar natural.
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>En Buona Vita Grow Shop creemos en el cultivo consciente y natural. Ofrecemos productos de alta calidad para que cultives con confianza y éxito.</p>
+  </section>
+
+  <section id="productos">
+    <h2>Productos</h2>
+    <div class="catalogo">
+      <div class="producto">
+        <img src="https://via.placeholder.com/150" alt="Maceta Eco">
+        <h3>Maceta de tela 10L</h3>
+        <p>$500 - Ideal para cultivos con buen drenaje y oxigenación.</p>
+        <button class="agregar" data-producto="Maceta de tela 10L" data-precio="500">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/150" alt="Fertilizante">
+        <h3>Fertilizante Orgánico</h3>
+        <p>$900 - Mejora el crecimiento y la floración naturalmente.</p>
+        <button class="agregar" data-producto="Fertilizante Orgánico" data-precio="900">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/150" alt="Kit LED">
+        <h3>Kit de Iluminación LED</h3>
+        <p>$3500 - Ahorro energético y gran rendimiento para indoor.</p>
+        <button class="agregar" data-producto="Kit de Iluminación LED" data-precio="3500">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="carrito" id="carrito">🛒</div>
+
+  <!-- Botón flotante lateral -->
+  <div id="abrirCatalogo"
+    style="position: fixed; top: 120px; left: 20px; background-color: #388e3c; color: white; padding: 10px 16px; border-radius: 12px; font-size: 1rem; font-weight: bold; cursor: pointer; box-shadow: 2px 2px 6px rgba(0,0,0,0.5); z-index: 1000;">
+    🛍️ Catálogo
+  </div>
+
+  <!-- Panel de catálogo -->
+  <div id="panelCatalogo"
+    style="position: fixed; top: 0; right: -100%; width: 100%; max-width: 400px; height: 100%; background: linear-gradient(160deg, #1b5e20, #4a148c, #b71c1c); color: white; padding: 2rem 1rem; box-shadow: -5px 0 10px rgba(0,0,0,0.6); transition: right 0.5s ease-in-out; z-index: 999; overflow-y: auto;">
+    <h2 style="margin-top: 0; border-bottom: 2px solid #fff; padding-bottom: 0.5rem;">🌿 Catálogo</h2>
+
+    <div style="margin-top: 1rem;">
+      <div style="margin-bottom: 1.5rem;">
+        <strong>Maceta de tela 10L</strong><br>
+        $500<br>
+        <button class="agregar" data-producto="Maceta de tela 10L" data-precio="500">Agregar</button>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <strong>Fertilizante Orgánico</strong><br>
+        $900<br>
+        <button class="agregar" data-producto="Fertilizante Orgánico" data-precio="900">Agregar</button>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <strong>Kit de Iluminación LED</strong><br>
+        $3500<br>
+        <button class="agregar" data-producto="Kit de Iluminación LED" data-precio="3500">Agregar</button>
+      </div>
+    </div>
+
+    <hr style="border-color: rgba(255,255,255,0.5); margin: 2rem 0;">
+
+    <h3>💳 Métodos de pago</h3>
+    <ul style="list-style-type: none; padding-left: 0;">
+      <li>✔️ Tarjeta de crédito</li>
+      <li>✔️ Tarjeta de débito</li>
+      <li>✔️ Transferencia bancaria</li>
+    </ul>
+
+    <button id="cerrarCatalogo"
+      style="margin-top: 2rem; padding: 10px 16px; background-color: #c62828; border: none; color: white; border-radius: 8px; cursor: pointer; font-weight: bold;">
+      🔙 Volver
+    </button>
+  </div>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form action="mailto:contacto@buonavita.com" method="post" enctype="text/plain">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p>También podés escribirnos por WhatsApp al +54 9 33 6434 5678</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Buona Vita Grow Shop. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script de carrito -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const carrito = [];
+    const carritoIcono = document.getElementById('carrito');
+
+    document.querySelectorAll('.agregar').forEach(boton => {
+      boton.addEventListener('click', (e) => {
+        const producto = e.target.dataset.producto;
+        const precio = e.target.dataset.precio;
+        carrito.push({ producto, precio });
+        alert(`${producto} agregado al carrito`);
+      });
+    });
+
+    carritoIcono.addEventListener('click', () => {
+      let detallesCarrito = "Carrito de compras:\n";
+      carrito.forEach(item => {
+        detallesCarrito += `${item.producto} - $${item.precio}\n`;
+      });
+      alert(detallesCarrito);
+    });
+
+    // Panel lateral
+    document.getElementById('abrirCatalogo').addEventListener('click', () => {
+      document.getElementById('panelCatalogo').style.right = '0';
+    });
+
+    document.getElementById('cerrarCatalogo').addEventListener('click', () => {
+      document.getElementById('panelCatalogo').style.right = '-100%';
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
